@@ -214,7 +214,9 @@
 			alert("결제방법을 선택해주세요");
 			return;
 		}
+		
 		var amount = jQuery("#sum").val();
+		var a = parseInt('${rentcar.totalpriceView}');
 		var car = '${rentcar.car.car_name }';
 		var branch = '${rentcar.branch.branch_name }';
 		var start = '${requirements.rent_reserve_startDate}';
@@ -227,7 +229,7 @@
 		    merchant_uid : 'merchant_' + new Date().getTime(),
 		    name : car+"("+branch+")"+"["+start+"~"+end+"]",
 		    /* amount : amount, */
-		    amount : 1000,
+		    amount : a*1000,
 		    buyer_email : '${log.member_email}',
 		    buyer_name : '${log.member_name}',
 		    buyer_tel : '${log.member_tel}',

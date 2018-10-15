@@ -183,7 +183,6 @@
 						  var loadFile = function(event) {
 						    var output = document.getElementById('output');
 						    output.src = URL.createObjectURL(event.target.files[0]);
-						    $("#test").hide();
 						    var fileValue = $("#uploadfile").val().split("\\");
 							var fileName = fileValue[fileValue.length-1]; // 파일명
 							jQuery("#car_image").val(fileName);

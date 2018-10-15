@@ -37,7 +37,7 @@ public class Reserv {
 	Insurance insurance;
 	Member member;
 	CarInfo carinfo;
-	
+	CarkindDetail carkindDetail;
 	public Reserv() {
 	}
 	

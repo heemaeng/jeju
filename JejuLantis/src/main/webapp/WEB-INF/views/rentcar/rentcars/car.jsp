@@ -280,7 +280,7 @@
 														<td align="center" style="border-right: hidden">${bdto.car_kind_rating }</td>
 														<td align="center" style="border-right: hidden">${bdto.totalrentView }원</td>
 														<td align="center" style="border-right: hidden">${bdto.totalinsuranceView }원</td>
-														<td align="center" style="border-right: hidden">${bdto.insurance_limit }원</td>
+														<td align="center" style="border-right: hidden">${bdto.insurance_limit }만원</td>
 														<td align="center" style="border-right: hidden">${bdto.totView }원</td>
 														<td align="center">													
 											              <button type="button" style="background-color:#f8fafb;border:0"><a href="#" onclick="reservcar(${bdto.car_kind_no });return false;" style="color:black;text-decoration:none">실시간예약</a></button>								                
