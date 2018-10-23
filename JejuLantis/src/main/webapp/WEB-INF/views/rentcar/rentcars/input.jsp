@@ -214,14 +214,12 @@
 			alert("결제방법을 선택해주세요");
 			return;
 		}
-		
 		var amount = jQuery("#sum").val();
-		var a = parseInt('${rentcar.totalpriceView}');
 		var car = '${rentcar.car.car_name }';
 		var branch = '${rentcar.branch.branch_name }';
 		var start = '${requirements.rent_reserve_startDate}';
 		var end = '${requirements.rent_reserve_endDate}';
-		IMP.init('imp60101607');
+		IMP.init('imp59738133');
 		
 		IMP.request_pay({
 		    pg : 'inicis', // version 1.1.0부터 지원.
@@ -229,7 +227,7 @@
 		    merchant_uid : 'merchant_' + new Date().getTime(),
 		    name : car+"("+branch+")"+"["+start+"~"+end+"]",
 		    /* amount : amount, */
-		    amount : a*1000,
+		    amount : 10,
 		    buyer_email : '${log.member_email}',
 		    buyer_name : '${log.member_name}',
 		    buyer_tel : '${log.member_tel}',
@@ -243,7 +241,6 @@
 		        msg += '상점 거래ID : ' + rsp.merchant_uid;
 		        msg += '결제 금액 : ' + rsp.paid_amount;
 		        msg += '카드 승인번호 : ' + rsp.apply_num;
-		        
 		        jQuery("#rent_payment_total_price").val(amount);
 		        jQuery("#rent_payment_insurance_price").val('${rentcar.totalinsurance }');
 		        jQuery("#rent_payment_carkind_price").val('${rentcar.totalprice}');
@@ -337,12 +334,30 @@
 	<div class="colorlib-loader"></div>
 	<form name="f" action="payment.do" method="post">
 		<!-- 결제테이블 -->
-		<input type="hidden" name="rent_payment_total_price" id="rent_payment_total_price">
-		<input type="hidden" name="rent_payment_insurance_price" id="rent_payment_insurance_price">
-		<input type="hidden" name="rent_payment_carkind_price" id="rent_payment_carkind_price">
-		<input type="hidden" name="rent_payment_way" id="rent_payment_way">
-		<input type="hidden" name="rent_payment_discount" id="rent_payment_discount">
-		<input type="hidden" name="rent_payment_goods_type" id="rent_payment_goods_type">
+<!-- 		<input type="hidden" name="rent_payment_no" id="rent_payment_no"> -->
+<!-- 		<input type="hidden" name="rent_payment_total_price" id="rent_payment_total_price"> -->
+<!-- 		<input type="hidden" name="rent_payment_insurance_price" id="rent_payment_insurance_price"> -->
+<!-- 		<input type="hidden" name="rent_payment_carkind_price" id="rent_payment_carkind_price"> -->
+<!-- 		<input type="hidden" name="rent_payment_way" id="rent_payment_way"> -->
+<!-- 		<input type="hidden" name="rent_payment_discount" id="rent_payment_discount"> -->
+<!-- 		<input type="hidden" name="rent_payment_goods_type" id="rent_payment_goods_type"> -->
+<!-- 		<input type="hidden" name="rent_payment_comp_date" id="rent_payment_comp_date"> -->
+<!-- 		<input type="hidden" name="rent_payment_ing" id="rent_payment_ing"> -->
+<!-- 		<input type="hidden" name="rent_payment_cancel_date" id="rent_payment_cancel_date"> -->
+<!-- 		<input type="hidden" name="rent_payment_resist" id="rent_payment_resist"> -->
+<!-- 		<input type="hidden" name="rent_payment_refund_price" id="rent_payment_refund_price"> -->
+<!-- 			private long rent_payment_no; -->
+<!-- 	private long rent_payment_total_price; -->
+<!-- 	private long rent_payment_insurance_price; -->
+<!-- 	private long rent_payment_carkind_price; -->
+<!-- 	private long rent_payment_discount; -->
+<!-- 	private String rent_payment_way; -->
+<!-- 	private Date rent_payment_comp_date; -->
+<!-- 	private String rent_payment_ing; -->
+<!-- 	private Date rent_payment_cancel_date; -->
+<!-- 	private Date rent_payment_resist; -->
+<!-- 	private String rent_payment_goods_type; -->
+<!-- 	private long rent_payment_refund_price; -->
 		<!-- 예약테이블 -->
 		<input type="hidden" name="branch_no" id="branch_no">
 		<input type="hidden" name="car_no" id="car_no">
@@ -885,3 +900,16 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</body>
 </html>
 
+© 2018 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Press h to open a hovercard with more details.

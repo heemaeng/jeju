@@ -17,7 +17,7 @@
 		<result property="insurance_withdraw_at" column="INSURANCE_WITHDRAW_AT"/>
 		<result property="insurance_resist" column="INSURANCE_RESIST"/>
 		<result property="manager_id" column="MANAGER_ID"/>
-		
+		<result property="branch_no" column="BRANCH_NO"/>
 		<result property="branch_name" column="BRANCH_NAME"/>
 		<result property="branch_member_name" column="BRANCH_MEMBER_NAME"/>
 
@@ -48,12 +48,16 @@
 		where INSURANCE_WITHDRAW_AT='N' and BRANCH_NO=(select BRANCH_NO from MANAGER where MANAGER_ID=#{manager_id})
 	</select>
 	<select id="insuranceList" resultType="Insurance" parameterType="String">
-		select * from INSURANCE 
-		where INSURANCE_WITHDRAW_AT='N' and BRANCH_NO=(select BRANCH_NO from MANAGER where MANAGER_ID=#{manager_id})
+		select * from INSURANCE, CAR, BRANCH 
+		where INSURANCE.INSURANCE_WITHDRAW_AT='N' and INSURANCE.BRANCH_NO=(select BRANCH_NO from MANAGER where MANAGER_ID=#{manager_id})
+		and CAR.CAR_NO = INSURANCE.CAR_NO
+        and BRANCH.BRANCH_NO = INSURANCE.BRANCH_NO
 	</select>
 	<select id="insuranceAllList" resultType="Insurance">
-		select * from INSURANCE 
+		select * from INSURANCE, CAR, BRANCH 
 		where INSURANCE_WITHDRAW_AT='N'
+		and CAR.CAR_NO = INSURANCE.CAR_NO
+        and BRANCH.BRANCH_NO = INSURANCE.BRANCH_NO
 	</select>
 <!-- 	<select id="insuranceCarNo" resultType="Insurance" parameterType="String"> -->
 <!-- 		select CAR.CAR_NO -->
@@ -63,7 +67,10 @@
 <!-- 		and CAR_KIND_NO=#{car_kind_no} -->
 <!-- 	</select> -->
 	<select id="insuranceContent" resultType="Insurance">
-		select * from INSURANCE where INSURANCE_NO=#{insurance_no}
+		select * from INSURANCE, CAR, BRANCH 
+		where INSURANCE_NO=#{insurance_no}
+		and CAR.CAR_NO = INSURANCE.CAR_NO
+        and BRANCH.BRANCH_NO = INSURANCE.BRANCH_NO
 	</select>
 	<insert id="insuranceInsert" parameterType="Insurance">
 		insert into INSURANCE values(INSURANCE_SEQ.NEXTVAL, #{branch_no}, #{car_kind_no},

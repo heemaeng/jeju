@@ -59,24 +59,34 @@
         <div class="table-responsive">
         	<c:forEach items="${insuranceContent}" var="insuranceContent" varStatus="status">
 		    	<table border="0" width="100%"  cellpadding="0" cellspacing="0">
-					<tr style="color:#808080;font-size:12pt">			
-						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">보험코드</th>
-						<th  width="35%" class="text-left">
-							${insuranceContent.insurance_no}
-						</th>
-						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">지점코드</th>
-						<th  width="35%" class="text-left">
-							${insuranceContent.branch_no}
-						</th>
-					</tr>
+<!-- 					<tr style="color:#808080;font-size:12pt">			 -->
+<!-- 						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">보험코드</th> -->
+<!-- 						<th  width="35%" class="text-left"> -->
+<%-- 							${insuranceContent.insurance_no} --%>
+<!-- 						</th> -->
+<!-- 						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">지점코드</th> -->
+<!-- 						<th  width="35%" class="text-left"> -->
+<%-- 							${insuranceContent.branch_no} --%>
+<!-- 						</th> -->
+<!-- 					</tr> -->
+<!-- 					<tr style="color:#808080;font-size:12pt"> -->
+<!-- 						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">차종상세코드</th> -->
+<!-- 						<th  width="35%" class="text-left"> -->
+<%-- 							${insuranceContent.car_kind_no} --%>
+<!-- 						</th> -->
+<!-- 						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">차종코드</th> -->
+<!-- 						<th  width="35%" class="text-left"> -->
+<%-- 							${insuranceContent.car_no} --%>
+<!-- 						</th> -->
+<!-- 					</tr> -->
 					<tr style="color:#808080;font-size:12pt">
-						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">차종상세코드</th>
+						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">지점명</th>
 						<th  width="35%" class="text-left">
-							${insuranceContent.car_kind_no}
+							${insuranceContent.branch_name}
 						</th>
-						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">차종코드</th>
+						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">차종명</th>
 						<th  width="35%" class="text-left">
-							${insuranceContent.car_no}
+							${insuranceContent.car_name}
 						</th>
 					</tr>
 					<tr style="color:#808080;font-size:12pt">			

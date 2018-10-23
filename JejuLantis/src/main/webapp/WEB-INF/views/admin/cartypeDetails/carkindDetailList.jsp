@@ -45,8 +45,8 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
               <thead>
                 <tr>
-                  <th width="5%">지점일련번호</th>
-                  <th width="5%">차일련번호</th>
+                  <th width="5%">지점명</th>
+                  <th width="5%">차종명</th>
                   <th width="5%">대여횟수</th>
                   <th width="5%">주중가</th>
                   <th width="5%">주말가</th>
@@ -56,8 +56,8 @@
               <tbody>
               <c:forEach items="${carDetailList}" var="carDetailList" varStatus="status">
                 <tr>
-					<td>${carDetailList.branch_no}</td>
-					<td>${carDetailList.car_no}</td>
+					<td>${carDetailList.branch_name}</td>
+					<td>${carDetailList.car_name}</td>
 					<td>${carDetailList.car_kind_count}</td>
 					<td>${carDetailList.car_kind_price_week}</td>
 					<td>${carDetailList.car_kind_price_weekend}</td>

@@ -45,10 +45,8 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" >
               <thead>
                 <tr>
-                  <th width="5%">보험일련번호</th>
-                  <th width="5%">지점일련번호</th>
-                  <th width="5%">차종일련번호</th>
-                  <th width="5%">차일련번호</th>
+                  <th width="5%">지점명</th>
+                  <th width="5%">차종명</th>
                   <th width="5%">보험명</th>
                   <th width="5%">보험료</th>
                   <th width="5%">등록날짜</th>
@@ -58,10 +56,8 @@
               <tbody>
               <c:forEach items="${insuranceList}" var="insuranceList" varStatus="status">
                 <tr>
-					<td>${insuranceList.insurance_no}</td>
-					<td>${insuranceList.branch_no}</td>
-					<td>${insuranceList.car_kind_no}</td>
-					<td>${insuranceList.car_no}</td>
+					<td>${insuranceList.branch_name}</td>
+					<td>${insuranceList.car_name}</td>
 					<td>${insuranceList.insurance_name}</td>
 					<td>${insuranceList.insurance_price}</td>
 					<td>${insuranceList.insurance_resist}</td>

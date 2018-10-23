@@ -41,6 +41,24 @@ public class Reserv {
 	public Reserv() {
 	}
 	
+	public Reserv(long branch_no, long car_no, long car_kind_no, long insurance_no, long member_no,
+			long rent_payment_no, DateTime rent_reserv_start, DateTime rent_reserv_end, String rent_reserv_license_kind,
+			String rent_reserv_driver_name, String rent_reserv_driver_birth, String rent_reserv_driver_tel) {
+		super();
+		this.branch_no = branch_no;
+		this.car_no = car_no;
+		this.car_kind_no = car_kind_no;
+		this.insurance_no = insurance_no;
+		this.member_no = member_no;
+		this.rent_payment_no = rent_payment_no;
+		this.rent_reserv_start = rent_reserv_start;
+		this.rent_reserv_end = rent_reserv_end;
+		this.rent_reserv_license_kind = rent_reserv_license_kind;
+		this.rent_reserv_driver_name = rent_reserv_driver_name;
+		this.rent_reserv_driver_birth = rent_reserv_driver_birth;
+		this.rent_reserv_driver_tel = rent_reserv_driver_tel;
+	}
+
 	public String getCut() {
 		int i = rent_reserv_driver_birth.indexOf(" ");
 		return rent_reserv_driver_birth.substring(0,i);

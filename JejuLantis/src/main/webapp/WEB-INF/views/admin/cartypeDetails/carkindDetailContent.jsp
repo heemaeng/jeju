@@ -61,15 +61,15 @@
 		    	<table border="0" width="100%"  cellpadding="0" cellspacing="0">
 					<h3 style="color:#007bff">차종상세등록</h3>	
 					<tr style="color:#808080;font-size:12pt">			
-						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">지점코드</th>
+						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">지점명</th>
 						<th  width="35%" class="text-left">
-							${carDetailContent.branch_no}
+							${carDetailContent.branch_name}
 						</th>
 					</tr>
 					<tr style="color:#808080;font-size:12pt">	
-						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">차종코드</th>
+						<th  height="60px" width="10%" class="text-center" style="background-color: #fafafa">차종명</th>
 						<th  width="35%" class="text-left">
-							${carDetailContent.car_no}
+							${carDetailContent.car_name}
 						</th>
 					</tr>
 					<tr style="color:#808080;font-size:12pt">

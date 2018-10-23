@@ -52,10 +52,15 @@
 		<result property="branch_member_name" column="BRANCH_MEMBER_NAME"/>
 	</resultMap>
 	<select id="carkindListI" resultType="Carkind">
-		select * from CAR where CAR_WITHDRAW_AT='N'
+		select * from CAR where CAR.CAR_WITHDRAW_AT='N'
 	</select>
 	<select id="carkindList" resultType="Carkind" parameterType="String">
-		select * from CAR_KIND where BRANCH_NO=(select BRANCH_NO from MANAGER where MANAGER_ID=#{manager_id}) and CAR_KIND_WITHDRAW_AT='N'
+		select * from BRANCH , CAR , CAR_KIND where CAR_KIND.BRANCH_NO=(select BRANCH_NO from MANAGER where MANAGER_ID=#{manager_id}) 
+		and CAR_KIND.CAR_KIND_WITHDRAW_AT='N'
+		and BRANCH.BRANCH_NO = CAR_KIND.BRANCH_NO 
+        and BRANCH.BRANCH_WITHDRAW_AT='N'
+        and CAR.CAR_WITHDRAW_AT='N'
+        and CAR.CAR_NO = CAR_KIND.CAR_NO
 	</select>
 	<update id="update" parameterType="String">
 		{call
@@ -136,6 +141,10 @@
 		select BRANCH_NO from MANAGER where MANAGER_ID=#{manager_id}
 	</select>
 	<select id="listAll" resultType="Carkind">
-		select * from CAR_KIND where CAR_KIND_WITHDRAW_AT='N'
+		select * from CAR_KIND, CAR, BRANCH where CAR_KIND.CAR_KIND_WITHDRAW_AT='N'
+		and BRANCH.BRANCH_NO = CAR_KIND.BRANCH_NO 
+        and BRANCH.BRANCH_WITHDRAW_AT='N'
+        and CAR.CAR_WITHDRAW_AT='N'
+        and CAR.CAR_NO = CAR_KIND.CAR_NO 
 	</select>
 </mapper>
